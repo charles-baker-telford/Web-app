@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="top_bar">
+        <header>logo</header>
+        <nav>
+            <svg class="present" id="profile_svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="40" height="40">
+           
+                <circle cx="12" cy="7" r="4"></circle>
+                <path d="M5 22v-2a7 7 0 0 1 14 0v2z"></path>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" id="hamburger" viewBox="0 0 100 80" fill="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="40" height="40">
+                <rect width="100" height="20"></rect>
+                <rect y="30" width="100" height="20"></rect>
+                <rect y="60" width="100" height="20"></rect>
+            </svg>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="page1.html">page 1</a></li>
+                <li><a href="page2.html">page 2</a></li>
+                <li><a href="page3.html">page 3</a></li>
+                <li><a href="page4.html">page 4</a></li>
+                <li><a href="page5.html">A very long link name for testing</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <main>
+        <content>
+            <img src="images/Placeholder.svg" style="width:100%;">
+        </content>
+        <aside>
+            <div class="tile">
+                <img src="images/Placeholder.svg" style="width:50%;">
+                <p>Words that say something about this option</p>
+            </div>
+            <div class="tile">
+                <img src="images/Placeholder.svg" style="width:50%;">
+                <p>Words that say something about this option</p>
+            </div>
+            <div class="tile">
+                <img src="images/Placeholder.svg" style="width:50%;">
+                <p>Words that say something about this option</p>
+            </div>
+        </aside>
+    </main>
+    <footer>
+        <ul>
+            <li><a href="privacy.html">Privacy policy</a></li>
+            <li><a href="contact">Contact us</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="cookie.html">Cookie consent</a></li>
+        </ul>
+    </footer>
+</body>
+<script>
+    const hamburger = document.getElementById("hamburger");
+    const navMenu = document.getElementById("nav-menu");
+
+    hamburger.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+    });
+</script>
+</html>
