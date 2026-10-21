@@ -4,9 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/message.css">
+    <link href="https://googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="scripts/message.js" defer></script>
     <title>Document</title>
 </head>
 <body>
+    <div id="messages">
+        
+    </div>
     <div id="top_bar">
         <header>logo</header>
         <nav>
@@ -15,10 +21,8 @@
                 <circle cx="12" cy="7" r="4"></circle>
                 <path d="M5 22v-2a7 7 0 0 1 14 0v2z"></path>
             </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" id="hamburger" viewBox="0 0 100 80" fill="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="40" height="40">
-                <rect width="100" height="20"></rect>
-                <rect y="30" width="100" height="20"></rect>
-                <rect y="60" width="100" height="20"></rect>
+            <svg class="hamburger-svg" id="hamburger" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org" aria-label="Open menu" role="img" width="40" height="40">
+                <path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="page1.html">page 1</a></li>
