@@ -1,5 +1,12 @@
-header, nav, main, footer {
-    border: 1px solid black;
+
+body {
+    background-color: #6B7c98;
+    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Source Sans Pro', sans-serif; */
+}
+
+#messages {
+    position:fixed;
 }
 
 header {
@@ -33,29 +40,97 @@ footer {
     stroke:green;
 }
 .tile {
+    
+    background-color: #E9E6E7;
     border: 1px solid teal;
     border-radius: 10px;
     box-shadow: 2px 4px 8px 0px rgba(0, 0, 0, 0.2);
     margin:10px;
     padding: 25px;
 }
+
 .nav-menu {
+    background-color: #E9E6E7;
     position: fixed;
-    max-height: 0;
+    max-height: 100%;
     overflow-y: clip;
     list-style-type: none;
+    padding: 0 5px;
     margin: 0;
-    padding: 5px;
+    transform-origin: top;
+    transform: scaleY(0);
+    transition: transform 0.5s;
+    
 }
 .nav-menu.active {
-    max-height:100%;
+    transform: scaleY(1);
+    padding: 5px;
 }
 li {
     width:100px;
+    height:45px
 }
 a {
     display: block;
     white-space:nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+
+}
+.nav-menu a {
+    color: #5e5653;
+    text-decoration: none;
+    font-size: 24px;
+    
+}
+@media screen and (min-width: 701px) {
+    body {
+        max-width:1440px;
+        margin:auto;
+    }
+    nav {
+        display:flex;
+        flex: 0 0 calc(100% - 250px - 40px);
+        flex-direction: row-reverse;
+        justify-content: space-around;
+        width:100% ;
+    }
+    .nav-menu {
+        flex:0 1 100%;
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        position: relative;
+        transform: scaleY(1);
+    }
+    .nav-menu li:hover {
+        background-color: #5E5653;
+    }
+    .nav-menu li:hover a {
+        color: #E9E6E7;
+    }
+    .present {
+        margin:auto;
+        flex: 0 0 100px;
+    }
+    #hamburger{
+        display:none
+    } 
+    main {
+        display:flex;
+        flex-direction: row;
+        min-height: 100vh;
+    }
+    main content {
+        flex: 0 0 400px;
+    }
+    aside {
+        display: flex;
+        flex-direction:row;
+    }
+    .tile {
+        height:fit-content;
+    }
+
+  /* Add your styles here */
 }

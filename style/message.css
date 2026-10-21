@@ -1,0 +1,19 @@
+.popup {
+    position:absolute;
+    bottom:0;
+    right:0;
+    background-color: #E9E6E7;
+    border: 1px solid teal;
+    border-radius: 10px;
+    box-shadow: 2px 4px 8px 0px rgba(0, 0, 0, 0.2);
+    margin:10px;
+    padding: 25px;
+}
+.popup img {
+    width:40px !important;
+}
+.message_type {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
