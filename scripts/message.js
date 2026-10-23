@@ -71,7 +71,7 @@ class Message_Confirm extends Message {
     }
 }
 
-function get_message_container(message) {
+function get_message_container(message_text) {
     var wrapper = document.createElement("div");
         wrapper.setAttribute("class", "popup")
         var message_wrapper = document.createElement("div");
@@ -86,7 +86,7 @@ function get_message_container(message) {
         control.innerText = "❌"
         message_wrapper.appendChild(control);
         var message = document.createElement("p");
-        message.innerText = this.content
+        message.innerText = message_text
         wrapper.appendChild(message)
 
         return wrapper;
