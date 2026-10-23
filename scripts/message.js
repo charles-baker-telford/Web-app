@@ -1,4 +1,6 @@
-const data = '{"message": [{"type": "message", "content": "This is message 1"},{"type": "confirm", "content": "This is message 2"}]}'; 
+var data = '{"message": [{"type": "message", "content": "This is a default message"},{"type": "confirm", "content": "This is a confirm message"},'
+data += '{"type": "warn", "content": "This is warn message"},{"type": "error", "content": "This is an error message"}'; 
+data += ']}';
     
 class Data {
     constructor(name, data) {
@@ -29,52 +31,33 @@ class Message {
     }
 
     display() {
-        var wrapper = '<div class="popup"><div class="message_type">';
-        wrapper += '<img src="images/info.svg">';
-        wrapper += '<span class="delete" onclick="this.parentNode.parentNode.remove()">❌</span>';
-        wrapper += `</div><p>${this.content}</p></div>`
-        document.getElementById("popup-container").innerHTML +=  wrapper 
+        var wrapper = get_message_container(this.content)
+        document.getElementById("popup-container").appendChild(wrapper)
     }
 }
 class Message_Warn extends Message {
 
     display() {
-        var wrapper = '<div class="popup"><div class="message_type">';
-        wrapper += '<img src="images/warn.svg">';
-        wrapper += '<span class="delete" onclick="this.parentNode.parentNode.remove()">❌</span>';
-        wrapper += `</div><p>${this.content}</p></div>`
-        document.getElementById("popup-container").innerHTML +=  wrapper 
+        var wrapper = get_message_container(this.content)
+        wrapper.querySelector("img").src = "images/warn.svg"
+        
+        document.getElementById("popup-container").appendChild(wrapper)
     }
 }
 class Message_Error extends Message {
 
     display() {
-        var wrapper = '<div class="popup"><div class="message_type">';
-        wrapper += '<img src="images/error.svg">';
-        wrapper += '<span class="delete" onclick="this.parentNode.parentNode.remove()">❌</span>';
-        wrapper += `</div><p>${this.content}</p></div>`
-        document.getElementById("popup-container").innerHTML +=  wrapper 
+        var wrapper = get_message_container(this.content)
+        wrapper.querySelector("img").src = "images/error.svg"
+        
+        document.getElementById("popup-container").appendChild(wrapper)
     }
 }
 class Message_Confirm extends Message {
 
     display() {
-        var wrapper = document.createElement("div");
-        wrapper.setAttribute("class", "popup")
-        var message_wrapper = document.createElement("div");
-        message_wrapper.setAttribute("class", "message_type")
-        wrapper.appendChild(message_wrapper);
-        var icon = document.createElement("img");
-        icon.setAttribute("src", "images/confirm.svg");
-        message_wrapper.appendChild(icon);
-        var control = document.createElement("span");
-        control.setAttribute("class", "delete");
-        control.setAttribute("onclick", "this.parentNode.parentNode.remove()")
-        control.innerText = "❌"
-        message_wrapper.appendChild(control);
-        var message = document.createElement("p");
-        message.innerText = this.content
-        wrapper.appendChild(message)
+        var wrapper = get_message_container(this.content)
+        wrapper.querySelector("img").src = "images/confirm.svg"
         var button = document.createElement("button");
         button.innerText = "Confirm";
         button.type = "button"
@@ -88,6 +71,26 @@ class Message_Confirm extends Message {
     }
 }
 
+function get_message_container(message) {
+    var wrapper = document.createElement("div");
+        wrapper.setAttribute("class", "popup")
+        var message_wrapper = document.createElement("div");
+        message_wrapper.setAttribute("class", "message_type")
+        wrapper.appendChild(message_wrapper);
+        var icon = document.createElement("img");
+        icon.setAttribute("src", "images/info.svg");
+        message_wrapper.appendChild(icon);
+        var control = document.createElement("span");
+        control.setAttribute("class", "delete");
+        control.setAttribute("onclick", "this.parentNode.parentNode.remove()")
+        control.innerText = "❌"
+        message_wrapper.appendChild(control);
+        var message = document.createElement("p");
+        message.innerText = this.content
+        wrapper.appendChild(message)
+
+        return wrapper;
+}
 
 var this_response = new Data("something", data)
 
