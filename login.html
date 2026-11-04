@@ -10,41 +10,10 @@
     <link rel="stylesheet" href="style/login.css">
     <link href="https://googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <script src="scripts/message.js" defer></script>
+    <script src="scripts/login.js" defer></script>
     <title>Sign in</title>
     <script>
-
-        const username = 'myUsername';
-        const password = 'myPassword123';
-
-        // 1. Format the data into URL-encoded parameters
-        const formData = new URLSearchParams();
-        formData.append('username', username);
-        formData.append('password', password);
-
-        async function  login() {
-            try {
-                
-            // 2. Send the POST request
-                const response = await fetch('scripts/login.php', {
-                    method: 'POST',
-                    headers: {
-                        // Tells PHP to parse this into the $_POST array
-                        'Content-Type': 'application/x-www-form-urlencoded' 
-                    },
-                body: formData
-                });
-
-                if (!response.ok) {
-                    throw new Error(`Server error: ${response.status}`);
-                }
-
-                const result = await response.json();
-                console.log(result);
-            
-            } catch (error) {
-                console.error('Request failed:', error);
-            }
-        }
+        
 
     </script>
 </head>
@@ -53,7 +22,7 @@
         <h1 id="login-title">Welcome</h1>
         <p class="intro" id="login-intro">Sign in to your account to continue.</p>
 
-        <form action="#" method="post">
+        <form id="login_form" action="#" method="post">
             <div class="field">
                 <label for="email">Email address</label>
                 <input
