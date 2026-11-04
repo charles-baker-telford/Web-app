@@ -92,6 +92,6 @@ function get_message_container(message_text) {
         return wrapper;
 }
 
-var this_response = new Data("something", data)
+//var this_response = new Data("something", data)
 
 

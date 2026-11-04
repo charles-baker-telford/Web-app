@@ -1,0 +1,97 @@
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            align-items: center;
+            background: #6b7c98;
+            display: flex;
+            font-family: Arial, sans-serif;
+            justify-content: center;
+            margin: 0;
+            min-height: 100vh;
+            padding: 1rem;
+        }
+
+        dialog {
+            border: 0;
+            border-radius: 12px;
+            box-shadow: 0 12px 36px rgb(0 0 0 / 20%);
+            color: #242424;
+            max-width: 420px;
+            padding: 2rem;
+            width: 100%;
+        }
+
+        h1 {
+            margin: 0 0 0.5rem;
+        }
+
+        .intro {
+            color: #555;
+            margin: 0 0 1.5rem;
+        }
+
+        .field {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            border: 1px solid #767676;
+            border-radius: 6px;
+            font: inherit;
+            padding: 0.75rem;
+            width: 100%;
+        }
+
+        .options {
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+            margin: 0.25rem 0 1.25rem;
+        }
+
+        .remember {
+            align-items: center;
+            display: flex;
+            gap: 0.45rem;
+        }
+
+        .remember label {
+            font-weight: 400;
+            margin: 0;
+        }
+
+        a {
+            color: #1c547b;
+        }
+
+        button {
+            background: #1c547b;
+            border: 0;
+            border-radius: 6px;
+            color: white;
+            cursor: pointer;
+            font: inherit;
+            font-weight: 600;
+            padding: 0.8rem;
+            width: 100%;
+        }
+
+        button:hover {
+            background: #143e5c;
+        }
+
+        .signup {
+            margin: 1.25rem 0 0;
+            text-align: center;
+        }
+    
