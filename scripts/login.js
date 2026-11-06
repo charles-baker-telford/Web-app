@@ -9,7 +9,7 @@ document.getElementById("login_form").addEventListener("submit", async (event) =
                     body: formData
                 });
                 const result = await response.json();
-                console.log(result);
+                new Data('response', result);
             } catch (error) {
             console.error("request failed:", error)
             }

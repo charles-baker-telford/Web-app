@@ -1,13 +1,11 @@
-var data = '{"message": [{"type": "message", "content": "This is a default message"},{"type": "confirm", "content": "This is a confirm message"},'
-data += '{"type": "warn", "content": "This is warn message"},{"type": "error", "content": "This is an error message"}'; 
-data += ']}';
+
     
 class Data {
     constructor(name, data) {
         this.name = name
-        this.data = JSON.parse(data)
-        for (var i in this.data.message) {
-            var message = this.data.message[i]
+        this.data = data
+        for (var i in this.data.messages) {
+            var message = this.data.messages[i]
             if (message.type == "warn") {
                 var message = new Message_Warn(message)
             } else if (message.type == "error") {

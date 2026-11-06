@@ -1,5 +1,16 @@
 <?php
 header('Content-Type: application/json; charset=utf-8');
-echo json_encode(['error' => 'Incorrrect username or password']);
+$output = ['messages' => [], 'status' => []];
 
+//connect to database
+
+//create the question to ask the database
+
+//process the answer
+
+//do something
+
+
+echo json_encode($output);
 ?>
+
