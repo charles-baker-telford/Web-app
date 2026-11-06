@@ -16,7 +16,7 @@ class Data {
                 var message = new Message(message)
             }
         }
-        
+        console.log(this.data.status)
         
     }
 }
