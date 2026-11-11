@@ -13,11 +13,11 @@
     <script src="scripts/login.js" defer></script>
     <title>Sign in</title>
     <script>
-        
+        const test_data = {"messages": [{"type": "message", "content": "test login: test@mail.com pass1"}]}
 
     </script>
 </head>
-<body>
+<body onload="after_load()">
     <div id="popup-container">
         
     </div>
@@ -63,4 +63,10 @@
         <p class="signup">Don't have an account? <a href="register.html">Create one</a></p>
     </dialog>
 </body>
+<script>
+    function after_load() {
+        new Data("something", test_data)
+    }
+    
+</script>
 </html>

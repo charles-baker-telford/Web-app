@@ -19,10 +19,12 @@ $password = $_POST["password"];
 //$output['status'][] = ["type" => "email", "content" => $username];
 //$output['status'][] = ["type" => "password", "content" => $password];
 
-$stmt = $pdo->query("SELECT * FROM users WHERE username = '$username' AND password = '$password'");
-$user = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$stmt = $pdo->prepare("SELECT user_id, password FROM users WHERE username = ? LIMIT 1");
+    $stmt->execute([$username]);
+    $user = $stmt->fetch();
 
-if ($user) {
+ if ($user && password_verify($password, $user['password'])) {
+    
     // Positive result: Exactly one record was found and returned
     $message = "Success! Found user: " . $user['user_id'];
     $output['status'][] = ["type" => "login", "content" => $message];
@@ -31,7 +33,7 @@ if ($user) {
     $output['status'][] = ["type" => "login", "content" => "Invalid credentials"];
 }
 //process the answer
-if ($user) {
+ if ($user && password_verify($password, $user['password'])) {
     session_start();
     $_SESSION["authenticated_user"] = $user['user_id'];
     $output['status'][] = ["type" => "authenticated", "content" => true];

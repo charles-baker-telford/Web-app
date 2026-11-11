@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/message.css">
+    <link rel="stylesheet" href="style/login.css">
+    <link href="https://googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="scripts/message.js" defer></script>
+    <script src="scripts/login.js" defer></script>
+    <title>register</title>
+    <script>
+        
+
+    </script>
+</head>
+<body>
+    <div id="popup-container">
+        
+    </div>
+    <dialog open aria-labelledby="login-title" aria-describedby="login-intro">
+        <h1 id="login-title">Welcome</h1>
+        <p class="intro" id="login-intro">Please enter your email address and chosen password.</p>
+
+        <form id="register_form" action="#" method="post">
+            <div class="field">
+                <label for="email">Email address</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    autocomplete="email"
+                    placeholder="you@example.com"
+                    required
+                >
+            </div>
+
+            <div class="field">
+                <label for="password">Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    autocomplete="current-password"
+                    required
+                >
+            </div>
+
+            <div class="options">
+                <div class="remember">
+                    <input type="checkbox" id="remember" name="remember">
+                    <label for="remember">Remember me</label>
+                </div>
+                
+            </div>
+
+            <button type="submit">Sign in</button>
+        </form>
+
+        <p class="signup">Alteady have an account? <a href="login.html">Go to login page</a></p>
+    </dialog>
+</body>
+</html>
