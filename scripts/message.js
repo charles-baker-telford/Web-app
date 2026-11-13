@@ -16,7 +16,11 @@ class Data {
                 var message = new Message(message)
             }
         }
+        if (this.data.redirect) {
+            window.location = this.data.redirect[0].location
+        }
         console.log(this.data.status)
+        console.log(this.data.redirect)
         
     }
 }

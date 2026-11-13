@@ -36,7 +36,11 @@ $stmt = $pdo->prepare("SELECT user_id, password FROM users WHERE username = ? LI
  if ($user && password_verify($password, $user['password'])) {
     session_start();
     $_SESSION["authenticated_user"] = $user['user_id'];
+    $output['status'][] = ["type" => "authenticated", "content" => $_SESSION["authenticated_user"]];
     $output['status'][] = ["type" => "authenticated", "content" => true];
+    $output[] = 'redirect';
+    $output['redirect'][] = ["location" => "profile.html"];
+    //header("location: ../profile.html");
 } else {
     $output['status'][] = ["type" => "authenticated", "content" => false];
     // check if there is currently a session

@@ -36,7 +36,7 @@ $newUserId = $pdo->lastInsertId();
 
 if ($newUserId) {
     // Positive result: Exactly one record was created
-    $message = "Success! Found user: " . $newUserId;
+    $message = "Success! Created user: " . $newUserId;
     $output['status'][] = ["type" => "login", "content" => $message];
 } else {
     // Negative result: No records created
