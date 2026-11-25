@@ -20,8 +20,26 @@ class Data {
             window.location = this.data.redirect[0].location
         }
         console.log(this.data.status)
+        var profile = new profile_data(this.data.data[0].profile[0])
         console.log(this.data.redirect)
         
+    }
+}
+class profile_data {
+    constructor(data){
+        this.data = data
+        for (const [key, value] of Object.entries(data))
+            this.add_profile_item(key, value)
+        }
+
+   
+    add_profile_item(attr, content) {
+        var span = document.createElement("SPAN");
+        span.setAttribute("class", "profile_item");
+        span.setAttribute("id", attr);
+        span.innerText = content
+        document.getElementById("panel").appendChild(span)
+
     }
 }
 

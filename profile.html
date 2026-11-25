@@ -10,7 +10,7 @@
     <script src="scripts/profile.js" defer></script>
     <title>Document</title>
 </head>
-<body>
+<body onload="get_profile()">
     <div id="popup-container">
         
     </div>
@@ -40,7 +40,7 @@
             <img src="images/Placeholder.svg" style="width:100%;">
         </content>
         <aside>
-            <div class="panel">
+            <div class="panel" id="panel">
                 <form id="profile" action="#" method="post">
                     Name: <input type="text" name="full_name">
                     Dateof birth: <input type="date" name="date_of_birth">
