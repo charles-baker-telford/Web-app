@@ -38,6 +38,8 @@ if ($newUserId) {
     // Positive result: Exactly one record was created
     $message = "Success! Created user: " . $newUserId;
     $output['status'][] = ["type" => "login", "content" => $message];
+
+    // need to create an entry in the profile table?
 } else {
     // Negative result: No records created
     $output['status'][] = ["type" => "login", "content" => "Invalid details"];
