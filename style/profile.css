@@ -1,0 +1,18 @@
+label, span {
+  display: block;
+}
+
+label {
+  font-weight: bold;
+  margin-top: 12px; /* Space above each new label group */
+}
+
+span {
+  margin-top: 4px;  /* Space between the label and its span */
+  max-width: 200px;
+  background-color: antiquewhite;
+  font-size: x-large;
+  border: 1px solid black;
+  border-radius: 1em;
+  padding: 5px;
+}

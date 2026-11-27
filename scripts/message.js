@@ -34,11 +34,22 @@ class profile_data {
 
    
     add_profile_item(attr, content) {
+        const label = document.createElement("label");
+        label.htmlFor = attr; // sets the "for" attribute
+        label.textContent = attr;
+
         var span = document.createElement("SPAN");
         span.setAttribute("class", "profile_item");
+        span.setAttribute("contenteditable", "True");
         span.setAttribute("id", attr);
-        span.innerText = content
-        document.getElementById("panel").appendChild(span)
+        span.textContent = content
+        span.addEventListener("blur", async (e) => {
+            console.log("target", e.target.id)
+            await saveToDatabase(e.target.textContent, e.target.id);
+            
+        });
+        label.appendChild(span);
+        document.getElementById("panel").appendChild(label)
 
     }
 }

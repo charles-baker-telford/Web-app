@@ -3,7 +3,16 @@
 $host    = 'localhost';
 $db      = '105568';
 $user    = '105568';
-$pass    = 'manic'; // move this to below www root in production
+// $pass    = 'manic'; // move this to below www root in production
+
+// Load configuration as an array. Use the actual location of your configuration file
+// current directory is var/www/$dbUsername/scripts
+// config.ini file needs to be owned by www-data and permissions 0640 
+
+    $config = parse_ini_file('../../../config.ini'); 
+    
+    $pass = $config[$user];
+
 $charset = 'utf8mb4';
 
 // DSN is data source name 

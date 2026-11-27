@@ -1,19 +1,4 @@
-document.getElementById("profile")?.addEventListener("submit", async (event) => {
-    event.preventDefault();
-    const formElement = event.target;
-    const formData = new FormData(formElement)
 
-    try {
-        const response = await fetch("scripts/profile.php", {
-            method: "POST",
-            body: formData
-        });
-        const result = await response.json();
-        new Data('response', result);
-    } catch (error) {
-    console.error("request failed:", error)
-    }
-})
 
 async function get_profile() {
 try {
@@ -33,6 +18,28 @@ try {
 
   } catch (error) {
     console.error("Failed to fetch profile data:", error);
+  }
+}
+
+async function saveToDatabase(text, id) {
+  try {
+    const response = await fetch("scripts/save_profile_field.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ id, text }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    console.error("Failed to save to database:", error);
+    throw error;
   }
 }
 
